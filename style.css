@@ -376,3 +376,24 @@ font-size:34px;
 }
 
 }
+/*========================
+MOBILE MENU
+========================*/
+
+.show-menu{
+display:flex !important;
+flex-direction:column;
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:#fff;
+padding:30px;
+gap:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.sticky{
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transition:.3s;
+}
