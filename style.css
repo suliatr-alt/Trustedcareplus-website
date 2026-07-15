@@ -827,3 +827,51 @@ display:none;
 }
 
 }
+/* ===== Mobile Menu ===== */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+@media (max-width:768px){
+
+nav{
+    display:none;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+}
+@media (max-width:768px){
+
+nav.show-menu{
+
+display:flex;
+
+flex-direction:column;
+
+position:absolute;
+
+top:90px;
+
+right:20px;
+
+background:#0B2744;
+
+padding:20px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+gap:15px;
+
+}
+
+}
