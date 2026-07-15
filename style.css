@@ -875,3 +875,8 @@ gap:15px;
 }
 
 }
+.logo img {
+    display: block;
+    height: 70px;
+    width: auto;
+}
