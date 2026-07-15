@@ -1,21 +1,44 @@
-window.addEventListener("scroll", function () {
+// =========================
+// MOBILE MENU
+// =========================
 
-    const header = document.querySelector("header");
+const menuIcon = document.querySelector(".menu-icon");
+const navigation = document.querySelector(".navigation");
 
-    if (window.scrollY > 40) {
-        header.style.background = "#071b31";
-        header.style.boxShadow = "0 8px 30px rgba(0,0,0,.25)";
+menuIcon.addEventListener("click", () => {
+    navigation.classList.toggle("show-menu");
+});
+
+// =========================
+// STICKY HEADER
+// =========================
+
+window.addEventListener("scroll", () => {
+
+    const header = document.querySelector(".header");
+
+    if (window.scrollY > 50) {
+        header.classList.add("sticky");
     } else {
-        header.style.background = "#0B2744";
-        header.style.boxShadow = "none";
+        header.classList.remove("sticky");
     }
 
 });
-// ===== Mobile Menu =====
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+// =========================
+// SMOOTH BUTTON HOVER
+// =========================
 
-menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("show-menu");
+const buttons = document.querySelectorAll(".primary-btn, .secondary-btn");
+
+buttons.forEach(button => {
+
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "translateY(-3px)";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "translateY(0)";
+    });
+
 });
