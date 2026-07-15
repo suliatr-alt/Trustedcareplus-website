@@ -1,44 +1,37 @@
-// =========================
-// MOBILE MENU
-// =========================
-
-const menuIcon = document.querySelector(".menu-icon");
+const menu = document.querySelector(".menu-icon");
 const navigation = document.querySelector(".navigation");
 
-menuIcon.addEventListener("click", () => {
+menu.addEventListener("click", () => {
+
     navigation.classList.toggle("show-menu");
+
+    if (navigation.classList.contains("show-menu")) {
+        menu.innerHTML = "✕";
+    } else {
+        menu.innerHTML = "☰";
+    }
+
 });
 
-// =========================
-// STICKY HEADER
-// =========================
+document.querySelectorAll(".navigation a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navigation.classList.remove("show-menu");
+        menu.innerHTML = "☰";
+
+    });
+
+});
 
 window.addEventListener("scroll", () => {
 
     const header = document.querySelector(".header");
 
-    if (window.scrollY > 50) {
+    if (window.scrollY > 30) {
         header.classList.add("sticky");
     } else {
         header.classList.remove("sticky");
     }
-
-});
-
-// =========================
-// SMOOTH BUTTON HOVER
-// =========================
-
-const buttons = document.querySelectorAll(".primary-btn, .secondary-btn");
-
-buttons.forEach(button => {
-
-    button.addEventListener("mouseenter", () => {
-        button.style.transform = "translateY(-3px)";
-    });
-
-    button.addEventListener("mouseleave", () => {
-        button.style.transform = "translateY(0)";
-    });
 
 });
